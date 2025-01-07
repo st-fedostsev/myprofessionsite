@@ -1,0 +1,110 @@
+body {
+  font-family: "Roboto";
+  background: #1E252B;
+  width: 1350px;
+}
+
+p, h1, h2, h3, h4 {
+  padding: 0;
+  margin: 0;
+}
+
+.page-header {
+  display: flex;
+  height: 64px;
+  margin-bottom: 58px;
+  align-items: center;
+  text-align: center;
+  vertical-align: center;
+}
+
+.main-nav {
+  margin: 26px 105px 0 0px;
+  width: 1224px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.navigation {
+  margin: 0;
+  padding: 0;
+  width: 600px;
+  height: 64px;
+  display: flex;
+  margin-right: 150px;
+
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.navigation__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 12px;
+  text-align: center;
+}
+
+.nav-active{
+    color: rgba(255, 255, 255, 1);
+    text-decoration: underline;
+    text-decoration-color: rgb(255, 110, 48);
+}
+
+.manager_logo {
+  display: flex;
+  gap: 12px;
+  width: 250px;
+  height: 64px;
+  justify-content: space-between;
+  align-items: center;
+  vertical-align: center;
+  margin-right: 150px;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+p.logo-text {
+  font-size: 22px;
+  font-weight: 600;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  vertical-align: center;
+}
+
+.authentication {
+  display: flex;
+  gap: 41px;
+  align-items: center;
+}
+.authentication__item {
+  font-weight: 600;
+}
+.authentication__item__login {
+  color: rgba(255, 255, 255, 0.78);
+}
+.authentication__item__sign-up {
+  background-color: rgb(255, 110, 48);
+  border-radius: 8px;
+  width: 118px;
+  height: 48px;
+  text-align: center;
+}
+.authentication__item__sign-up .sign-up {
+  font-weight: 600;
+  color: rgb(253, 245, 255);
+  padding: 12px 28px;
+}
+
+.page-main {
+  margin-left: 111px;
+}

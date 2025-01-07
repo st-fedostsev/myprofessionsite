@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Менеджер IT проектов</title>
+        <link rel="stylesheet" href="{% static 'style/main.css'%}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="page-header">
+            <nav class = "main-nav">
+                <div class = 'manager_logo'>
+                    <img src = "{% static 'img/manager-logo.png' %}" alt = 'Логотип' width="100px" height="80px">
+                    <p class ='logo-text'>Менеджер IT-проектов</p>
+                </div>
+
+                <div class="navigation">
+                    <div class = "navigation__item nav-active">
+                        Главная
+                    </div>
+                    <div class = "navigation__item nav-inactive">
+                        Общая статистика
+                    </div>
+                    <div class = "navigation__item nav-inactive">
+                        Востребованность
+                    </div>
+                    <div class = "navigation__item nav-inactive">
+                        География
+                    </div>
+                    <div class = "navigation__item nav-inactive">
+                        Навыки
+                    </div>
+                    <div class = "navigation__item nav-inactive">
+                        Последние вакансии
+                    </div>
+                </div>
+                <div class = "authentication">
+                    <div class = "authentication__item authentication__item__login">
+                        Login
+                    </div>
+                    <div class = "authentication__item authentication__item__sign-up">
+                        <p class="sign-up">Sign Up</p>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            Заглушка-текст
+        </main>
+
+        <footer>
+
+        </footer>
+    </body>
+</html>
