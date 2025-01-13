@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <script src="{% static 'js/script.js' %}"></script>
     </head>
     <body>
         <header class="page-header">
@@ -19,23 +20,23 @@
                 </div>
 
                 <div class="navigation">
-                    <div class = "navigation__item nav-active">
-                        Главная
+                    <div class="navigation__item {% if active_page == 'home' %}nav-active{% else %}nav-inactive{% endif %}">
+                        <a class="nav-item" href="{% url 'home' %}">Главная</a>
                     </div>
-                    <div class = "navigation__item nav-inactive">
-                        Общая статистика
+                    <div class="navigation__item {% if active_page == 'statistic' %}nav-active{% else %}nav-inactive{% endif %}">
+                        <a class="nav-item" href="{% url 'statistic' %}">Общая статистика</a>
                     </div>
-                    <div class = "navigation__item nav-inactive">
-                        Востребованность
+                    <div class="navigation__item {% if active_page == 'relevance' %}nav-active{% else %}nav-inactive{% endif %}">
+                        <a class="nav-item" href="{% url 'relevance' %}">Востребованность</a>
                     </div>
-                    <div class = "navigation__item nav-inactive">
-                        География
+                    <div class="navigation__item {% if active_page == 'geography' %}nav-active{% else %}nav-inactive{% endif %}">
+                        <a class="nav-item" href="{% url 'geography' %}">География</a>
                     </div>
-                    <div class = "navigation__item nav-inactive">
-                        Навыки
+                    <div class="navigation__item {% if active_page == 'skills' %}nav-active{% else %}nav-inactive{% endif %}">
+                        <a class="nav-item" href="{% url 'skills' %}">Навыки</a>
                     </div>
-                    <div class = "navigation__item nav-inactive">
-                        Последние вакансии
+                    <div class="navigation__item {% if active_page == 'last_vacancies' %}nav-active{% else %}nav-inactive{% endif %}">
+                        <a class="nav-item" href="{% url 'last_vacancies' %}">Последние вакансии</a>
                     </div>
                 </div>
                 <div class = "authentication">
@@ -50,7 +51,7 @@
         </header>
 
         <main>
-            Заглушка-текст
+
         </main>
 
         <footer>

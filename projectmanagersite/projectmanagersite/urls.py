@@ -17,9 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from main_page.views import index_page, about_page
+from main_page.views import index_page, about_page, statistic_page, relevancy_page, geography_page, skills_page, last_vacancies_page
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index_page),
-    path('about/', about_page)
+    path('', index_page, name = 'home'),
+    path('about/', about_page, name = 'about'),
+    path('statistic/', statistic_page, name = 'statistic'),
+    path('relevance/', relevancy_page, name = 'relevance'),
+    path('geography/', geography_page, name = 'geography'),
+    path('skills/', skills_page, name = 'skills'),
+    path('last_vacancies/', last_vacancies_page, name = 'last_vacancies')
 ]
