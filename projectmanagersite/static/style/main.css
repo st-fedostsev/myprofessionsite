@@ -132,3 +132,12 @@ div.profession-description{
   width: 600px;
 
 }
+
+.skills-list{
+    margin: 0;
+    padding: 0;
+    list-style-type: "✔";
+    padding-left: 550px;
+    padding-top: 50px;
+}
+
