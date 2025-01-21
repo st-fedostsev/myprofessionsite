@@ -9,7 +9,6 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <script src="{% static 'js/script.js' %}"></script>
     </head>
     <body>
         <header class="page-header">
@@ -54,15 +53,14 @@
             <h1 style = "text-align: center; padding: 18px 0px;">
                 Общая статистика
             </h1>
-            <div style = "display: flex; justify-content: center; margin-bottom: 50px;">
-                <img src = "{% static 'img/Основная статистика зарплат.png' %}">
-            </div>
-            <div style = "display: flex; justify-content: center; margin-bottom: 50px;">
-                <img src = "{% static 'img/Статистика по городам.png' %}">
-            </div>
-            <div style = "display: flex; justify-content: center;">
-                <img src = "{% static 'img/graph.png' %}">
-            </div>
+            <ul class = "statistic">
+                {% for statistic in statistics_data %}
+               <li class = "statistic-item">
+                   <img src="{{ statistic.image.url }}" alt="{{ statistic.title }}">
+               </li>
+                {% endfor %}
+            </ul>
+
         </main>
 
         <footer style = "margin-top: 100px; justify-content: center; display: flex;">
