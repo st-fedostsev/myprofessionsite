@@ -49,20 +49,48 @@
                 </div>
             </nav>
         </header>
-
         <main>
-             <h1 style = "text-align: center; padding: 18px 0px;">
-                Последние вакансии по профессии
-            </h1>
-            <div style = "display: flex; justify-content: center; margin-bottom: 50px;">
-                <img src = "{% static 'img/1.png' %}">
-            </div>
-            <div style = "display: flex; justify-content: center; margin-bottom: 50px;">
-                <img src = "{% static 'img/3.png' %}">
-            </div>
-            <div style = "display: flex; justify-content: center;">
-                <img src = "{% static 'img/4.png' %}">
-            </div>
+            <main>
+    <h1 style="text-align: center; padding: 18px 0px;">
+        Последние вакансии по профессии
+    </h1>
+    <div class="container" style="
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #273034;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ddd;
+    ">
+
+        <h2 style="color: #fff; text-align: center;">Вакансия: {{ vacancies }}</h2>
+
+        {% for vacancy in vacancy_data %}
+        <div class="job-card" style="
+            background: #35454d;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        ">
+            <h3 style="color: #00bcd4;">{{ vacancy.name }}</h3>
+            <p style="color: #fff;"><strong>Компания:</strong> {{ vacancy.employer }}</p>
+            <p style="color: #fff;"><strong>Описание:</strong> {{ vacancy.description }}</p>
+            <p style="color: #fff;"><strong>Навыки:</strong>
+                {% for skill in vacancy.key_skills %}
+                    {{ skill }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
+            <p style="color: #fff;"><strong>Оклад:</strong> {{ vacancy.salary }}</p>
+            <p style="color: #fff;"><strong>Местоположение:</strong> {{ vacancy.area }}</p>
+            <p style="color: #fff;"><strong>Дата публикации:</strong> {{ vacancy.published_at }}</p>
+            <p><a href="{{ vacancy.alternate_url }}" style="color: #00bcd4;">Ссылка на вакансию</a></p>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+
         </main>
 
         <footer style = "margin-top: 100px; justify-content: center; display: flex;">

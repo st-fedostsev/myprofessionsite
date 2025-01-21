@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import StatisticsData
+from .hh import HeadHunterAPI
 
 # Create your views here.
 def index_page(request):
@@ -22,6 +23,14 @@ def skills_page(request):
     return render(request, 'skills.html', {'active_page': 'skills'})
 
 def last_vacancies_page(request):
-    return render(request, 'last_vacancies.html', {'active_page': 'last_vacancies'})
+    vacancies = 'Менеджер'
+    context = {'vacancies': vacancies}
 
+    query = vacancies
+    headhunter = HeadHunterAPI(query)
+    vacancy_data = headhunter.fetch_vacancies('2025-01-21', 5)
+    context['vacancy_data'] = vacancy_data
+    context['active_page'] = 'last_vacancies'
+
+    return render(request, 'last_vacancies.html', context)
 
